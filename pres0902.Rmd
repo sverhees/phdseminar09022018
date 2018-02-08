@@ -238,4 +238,4 @@ class: inverse center, middle
 
 презентация доступна в Github:
 
-<тут ссылка>
+<https://sverhees.github.io/phdseminar09022018/>
