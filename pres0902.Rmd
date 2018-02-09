@@ -63,43 +63,6 @@ my sister **read(pf)** this book <br>
 * результатив / текущая релевантность | заглазное прошедшее (эвиденциальность) *и др.*
 
 ---
-class: inverse, center, middle
-
-## Распределение **эивиденциальных** перфектоидов на карте
-
-- координаты для каждого языка из [Glottolog 3.2](http://glottolog.org/)
-- сведения из грамматик и статьей ( [Список источников по языкам](https://sverhees.github.io/maps/verbmap.html) )
-
-
----
-
-## Распределение **эивиденциальных** перфектоидов
-
-```{r, fig.height=6}
-
-# general area map
-
-ec <- read_tsv("ec.csv")
-
-ec$aff <- factor(ec$aff, levels = c("Nakh", "Avar", "Andic", "Tsezic", "Lak", "Dargwa", "Lezgic", "Khinalugh"))
-ec$evidentiality <- factor(ec$evidentiality, levels = c("+", "-"))
-
-
-map.feature(ec$language,
-            features = ec$aff,
-            tile = c("Esri.WorldTopoMap"),
-            color = ec$color_aff,
-            stroke.features = ec$evidentiality,
-            stroke.color = c("black", "white"),
-            title = "Branch",
-            stroke.title = "Evidential",
-            zoom.control = T)
-
-```
-
-Карта в статье об этой теме немного отличается от изображения выше [Ферхеес 2018а].
-
----
 
 class: inverse, center, middle
 
@@ -131,6 +94,44 @@ class: inverse, center, middle
 
 
 ---
+
+class: inverse, center, middle
+
+## Распределение **эивиденциальных** перфектоидов на карте
+
+- координаты для каждого языка из [Glottolog 3.2](http://glottolog.org/)
+- сведения из грамматик и статьей ( [Список источников по языкам](https://sverhees.github.io/maps/verbmap.html) )
+
+---
+
+## Распределение **эивиденциальных** перфектоидов
+
+```{r, fig.height=6}
+
+# general area map
+
+ec <- read_tsv("ec.csv")
+
+ec$aff <- factor(ec$aff, levels = c("Nakh", "Avar", "Andic", "Tsezic", "Lak", "Dargwa", "Lezgic", "Khinalugh"))
+ec$evidentiality <- factor(ec$evidentiality, levels = c("+", "-"))
+
+
+map.feature(ec$language,
+            features = ec$aff,
+            tile = c("Esri.WorldTopoMap"),
+            color = ec$color_aff,
+            stroke.features = ec$evidentiality,
+            stroke.color = c("black", "white"),
+            title = "Branch",
+            stroke.title = "Evidential",
+            zoom.control = T)
+
+```
+
+Карта в статье об этой теме немного отличается от изображения выше [Ферхеес 2018а].
+
+---
+
 
 ## Тюркская гипотеза
 
